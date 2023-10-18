@@ -69,7 +69,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	return (*head);
 }
 /**
- * free_dlistint - free list
+ * free_list - free list
  * @head: pointer to struct
  *
  * Return: no return

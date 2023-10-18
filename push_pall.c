@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
  * op_pall - print the list
- * @h: a pointer to the struct
  *
+ * @h: a pointer to the struct
+ * @line_n: line number
  * Return: all the value of the list
  *
  */
@@ -20,10 +21,10 @@ void op_pall(stack_t **h, unsigned int line_n)
 #include "monty.h"
 
 /**
- * _push - pushes an element to the stack
+ * op_push - pushes an element to the stack
  *
  * @h: head of the linked list
- * @cline: line number
+ * @line_n: line number
  * Return: no return
  */
 void op_push(stack_t **h, unsigned int line_n)
