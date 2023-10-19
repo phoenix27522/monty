@@ -45,5 +45,5 @@ void op_pchar(stack_t **h, unsigned int line_n)
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_n);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", (*h)->n);
+	printf("%c\n", (char)(*h)->n);
 }
