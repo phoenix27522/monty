@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * mod - computes the rest of the division of the second
+ * op_mod - computes the rest of the division of the second
  * top element of the stack by the top element of the stack.
  * @h: pointer to pointer to the stack
  * @line_n: the line number
@@ -46,4 +46,25 @@ void op_pchar(stack_t **h, unsigned int line_n)
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (char)(*h)->n);
+}
+
+/**
+ * op_pstr - prints the string starting at the top of..
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_pstr(stack_t **h, unsigned int line_n)
+{
+	stack_t *current = *h;
+
+	(void)line_n;
+
+	while (current != NULL && current->n != 0 &&
+			current->n > 0 && current->n <= 127)
+	{
+		printf("%c", current->n);
+		current = current->next;
+	}
+	printf("\n");
 }
