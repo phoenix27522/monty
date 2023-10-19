@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * process_push - process the push opcode
+ * op_push - process the push opcode
  * @h: double pointer to the top of the stack
- * @line_number: current line number
+ * @line_n: current line number
  * Return: Nothing
  */
 void op_push(stack_t **h, unsigned int line_n)
@@ -37,8 +37,8 @@ void op_push(stack_t **h, unsigned int line_n)
 	add_dnodeint(h, atoi(arg));
 }
 /**
- * pall - handles the pall in monty code
- * @stack: pointer to pointer to the stack
+ * op_pall - handles the pall in monty code
+ * @h: pointer to pointer to the stack
  * @line_n: the line number
  * Return: Nothing
  */
@@ -56,12 +56,11 @@ void op_pall(stack_t **h, unsigned int line_n)
 }
 #include "monty.h"
 /**
- * pint - prints the value at the top of the stack.
- * @stack: pointer to pointer to the stack
- * @line_number: the line number
+ * op_pint - prints the value at the top of the stack.
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
  * Return: Nothing
  */
-
 void op_pint(stack_t **h, unsigned int line_n)
 {
 	if (*h == NULL)

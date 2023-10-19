@@ -54,7 +54,6 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 		exit(0);
 	}
 	temp->n = n;
-	/*Careful with the first time*/
 	if (*head == NULL)
 	{
 		temp->next = *head;
@@ -71,7 +70,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 #include "monty.h"
 /**
  * free_stack - frees the stack
- * @stack: the stack to be freed
+ * @h: the stack to be freed
  * Return: Nothing.
  */
 void free_stack(stack_t **h)
