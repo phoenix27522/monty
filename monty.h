@@ -79,5 +79,6 @@ void op_mod(stack_t **h, unsigned int line_n);
 void op_pchar(stack_t **h, unsigned int line_n);
 void op_pstr(stack_t **h, unsigned int line_n);
 void op_rotl(stack_t **h, unsigned int line_n);
+void op_rotr(stack_t **h, unsigned int line_n);
 
 #endif /* MONTY_H */

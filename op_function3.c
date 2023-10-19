@@ -94,3 +94,29 @@ void op_rotl(stack_t **h, unsigned int line_n)
 	temp->prev = last;
 	temp->next = NULL;
 }
+#include "monty.h"
+/**
+ * op_rotr - rotates the stack to the bottom
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_rotr(stack_t **h, unsigned int line_n)
+{
+	stack_t *temp, *last;
+
+	line_n = line_n;
+
+	if (*h == NULL || (*h)->next == NULL)
+		return;
+	temp = *h;
+	last = *h;
+
+	while (last->next != NULL)
+		last = last->next;
+	last->next = temp;
+	temp->prev = last;
+	*h = temp->next;
+	(*h)->prev = NULL;
+	temp->next = NULL;
+}
