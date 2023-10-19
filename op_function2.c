@@ -39,3 +39,72 @@ void op_nop(stack_t **h, unsigned int line_n)
 	(void)h;
 	(void)line_n;
 }
+/**
+ * op_sub - subtracts the top two elements of the stack.
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_sub(stack_t **h, unsigned int line_n)
+{
+	stack_t *temp;
+
+	if (*h == NULL || (*h)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	temp = *h;
+	temp->next->n -= temp->n;
+	temp->next->prev = NULL;
+	*h = temp->next;
+	free(temp);
+}
+/**
+ * op_div - divides the second top element of
+ * the stack by the top element of the stack.
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_div(stack_t **h, unsigned int line_n)
+{
+	stack_t *temp;
+
+	if (*h == NULL || (*h)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	temp = *h;
+	if (temp->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	temp->next->n /= temp->n;
+	temp->next->prev = NULL;
+	*h = temp->next;
+	free(temp);
+}
+/**
+ * op_sub - subtracts the top two elements of the stack.
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_mul(stack_t **h, unsigned int line_n)
+{
+	stack_t *temp;
+
+	if (*h == NULL || (*h)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	temp = *h;
+	temp->next->n *= temp->n;
+	temp->next->prev = NULL;
+	*h = temp->next;
+	free(temp);
+}

@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
 	instruction_t op[] = {
 		{"push", op_push}, {"pall", op_pall}, {"pint", op_pint},
 		{"pop", op_pop}, {"swap", op_swap}, {"add", op_add},
-		{"nop", op_nop},
+		{"nop", op_nop}, {"sub", op_sub}, {"div", op_div},
+		{"mul", op_mul},
 		{NULL, NULL}
 	};
 
