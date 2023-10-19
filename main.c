@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 		{"push", op_push}, {"pall", op_pall}, {"pint", op_pint},
 		{"pop", op_pop}, {"swap", op_swap}, {"add", op_add},
 		{"nop", op_nop}, {"sub", op_sub}, {"div", op_div},
-		{"mul", op_mul},
+		{"mul", op_mul}, {"mod", op_mod},
 		{NULL, NULL}
 	};
 
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
  * @fopcode: the file to be looped
  * @op: pointer to the instructions struct
  * Return: Nothing
- */
+ */						
 void execute(FILE *fopcode, instruction_t *op)
 {
 	stack_t *stack = NULL;
