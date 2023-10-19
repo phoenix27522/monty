@@ -10,7 +10,7 @@
 int execute(char *line, stack_t **stk_que, unsigned int line_n, FILE *fopcode)
 {
 	instruction_t op[] = {
-				{"push", op_push}, {"pall", op_pall},
+				{"push", op_push}, {"pall", op_pall}, {"pint", op_pint},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;

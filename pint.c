@@ -1,3 +1,4 @@
+#include "monty.h"
 /**
  * _pint - prints the value at the top of the stack
  *
@@ -5,18 +6,18 @@
  * @cline: line number
  * Return: no return
  */
-void _pint(stack_t **head, unsigned int cline)
+void op_pint(stack_t **h, unsigned int line_n)
 {
-	(void)cline;
+	(void)line_n;
 
-	if (*head == NULL)
+	if (*h == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
-		fclose(bus.fopcode);
-		free(bus.line);
-		free_list(*head);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_n);
+		fclose(global.fopcode);
+		free(global.line);
+		free_list(*h);
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%d\n", (*head)->n);
+	printf("%d\n", (*h)->n);
 }

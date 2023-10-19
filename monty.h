@@ -77,5 +77,5 @@ stack_t *add_dnodeint_end(stack_t **head, const int n);
 int execute(char *line, stack_t **stk_que, unsigned int line_n, FILE *fopcode);
 void op_pall(stack_t **h, unsigned int line_n);
 void op_push(stack_t **h, unsigned int line_n);
-
+void op_pint(stack_t **h, unsigned int line_n);
 #endif /* MONTY_H */
