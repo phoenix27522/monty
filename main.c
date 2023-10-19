@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	FILE *fopcode;
 	instruction_t op[] = {
 		{"push", op_push}, {"pall", op_pall}, {"pint", op_pint},
-		{"pop", op_pop},
+		{"pop", op_pop}, {"swap", op_swap},
 		{NULL, NULL}
 	};
 

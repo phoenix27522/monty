@@ -62,5 +62,6 @@ void op_pall(stack_t **h, unsigned int line_n);
 void op_push(stack_t **h, unsigned int line_n);
 void op_pint(stack_t **h, unsigned int line_n);
 void op_pop(stack_t **h, unsigned int line_n);
+void op_swap(stack_t **h, unsigned int line_n);
 
 #endif /* MONTY_H */

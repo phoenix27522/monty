@@ -89,3 +89,33 @@ void op_pop(stack_t **h, unsigned int line_n)
 	*h = (*h)->next;
 	free(temp);
 }
+/**
+ * op_swap - handles the pall in monty code
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_swap(stack_t **h, unsigned int line_n)
+{
+	int n = 0;
+	stack_t *temp = NULL;
+
+	temp = *h;
+
+	for (; temp != NULL; temp = temp->next, n++)
+		;
+
+	if (n < 2)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *h;
+	*h = (*h)->next;
+	temp->next = (*h)->next;
+	temp->prev = *h;
+	(*h)->next = temp;
+	(*h)->prev = NULL;
+}
+
