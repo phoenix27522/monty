@@ -67,6 +67,8 @@ void op_swap(stack_t **h, unsigned int line_n);
 
 /*-------------------- op_function2.c -------------------*/
 void op_add(stack_t **h, unsigned int line_n);
+void op_nop(stack_t **h, unsigned int line_n);
+
 
 
 #endif /* MONTY_H */
