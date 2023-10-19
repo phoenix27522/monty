@@ -35,14 +35,14 @@ void op_mod(stack_t **h, unsigned int line_n)
  */
 void op_pchar(stack_t **h, unsigned int line_n)
 {
-	if (h == NULL || *h == NULL)
+	if (*h == NULL)
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_n);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_n);
 		exit(EXIT_FAILURE);
 	}
-	if ((*h)->n < 0 || (*h)->n >= 128)
+	if ((*h)->n < 0 || (*h)->n > 127)
 	{
-		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_n);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_n);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (*h)->n);
