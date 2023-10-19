@@ -54,7 +54,6 @@ void op_pall(stack_t **h, unsigned int line_n)
 		current = current->next;
 	}
 }
-#include "monty.h"
 /**
  * op_pint - prints the value at the top of the stack.
  * @h: pointer to pointer to the stack
@@ -69,4 +68,24 @@ void op_pint(stack_t **h, unsigned int line_n)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*h)->n);
+}
+/**
+ * op_pop - removes the top element of the stack.
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_pop(stack_t **h, unsigned int line_n)
+{
+	stack_t *temp;
+
+	if (*h == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *h;
+	*h = (*h)->next;
+	free(temp);
 }
