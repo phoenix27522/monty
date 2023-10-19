@@ -99,7 +99,7 @@ void op_mul(stack_t **h, unsigned int line_n)
 
 	if (*h == NULL || (*h)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short\n", line_n);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_n);
 		exit(EXIT_FAILURE);
 	}
 	temp = *h;
