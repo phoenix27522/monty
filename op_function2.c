@@ -88,7 +88,7 @@ void op_div(stack_t **h, unsigned int line_n)
 	free(temp);
 }
 /**
- * op_sub - subtracts the top two elements of the stack.
+ * op_mul - subtracts the top two elements of the stack.
  * @h: pointer to pointer to the stack
  * @line_n: the line number
  * Return: Nothing
