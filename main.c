@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 		{"pop", op_pop}, {"swap", op_swap}, {"add", op_add},
 		{"nop", op_nop}, {"sub", op_sub}, {"div", op_div},
 		{"mul", op_mul}, {"mod", op_mod}, {"pchar", op_pchar},
-		{"pstr", op_pstr},
+		{"pstr", op_pstr}, {"rotl", op_rotl},
 		{NULL, NULL}
 	};
 

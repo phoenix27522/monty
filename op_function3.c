@@ -68,3 +68,29 @@ void op_pstr(stack_t **h, unsigned int line_n)
 	}
 	printf("\n");
 }
+#include "monty.h"
+/**
+ * op_rotl - rotates the stack to the top.
+ * @h: pointer to pointer to the stack
+ * @line_n: the line number
+ * Return: Nothing
+ */
+void op_rotl(stack_t **h, unsigned int line_n)
+{
+	stack_t *temp, *last;
+
+	(void)line_n;
+
+	if (*h == NULL || (*h)->next == NULL)
+		return;
+	temp = *h;
+	last = *h;
+
+	while (last->next != NULL)
+		last = last->next;
+	*h = temp->next;
+	(*h)->prev = NULL;
+	last->next = temp;
+	temp->prev = last;
+	temp->next = NULL;
+}
