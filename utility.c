@@ -68,20 +68,20 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	*head = temp;
 	return (*head);
 }
+#include "monty.h"
 /**
- * free_list - free list
- * @head: pointer to struct
- *
- * Return: no return
- *
+ * free_stack - frees the stack
+ * @stack: the stack to be freed
+ * Return: Nothing.
  */
-void free_list(stack_t *head)
+void free_stack(stack_t **h)
 {
-	stack_t *tmp;
-
-	while ((tmp = head) != NULL)
+	while (*h != NULL)
 	{
-		head = head->next;
-		free(tmp);
+		stack_t *temp;
+
+		temp = *h;
+		*h = (*h)->next;
+		free(temp);
 	}
 }

@@ -44,29 +44,10 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/*-------------------- Global variable --------------------*/
-
-/**
- * struct global_var - contains variable 
- * @arg: value
- * @fopcode: pointer to monty file
- * @line: line content
- * 
- * Description: carries values through the program
- */
-typedef struct global_var
-{
-	char *arg;
-	FILE *fopcode;
-	char *line;
-	int lifo;
-}  global_v;
-
-extern global_v global;
 
 /*-------------------- List --------------------*/
 
-void free_list(stack_t *head);
+void free_stack(stack_t **h);
 
 /*-------------------- Utility --------------------*/
 stack_t *add_dnodeint(stack_t **head, const int n);
@@ -74,7 +55,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n);
 
 /*-------------------- Main --------------------*/
 
-int execute(char *line, stack_t **stk_que, unsigned int line_n, FILE *fopcode);
+void execute(FILE *fopcode, instruction_t *op);
 void op_pall(stack_t **h, unsigned int line_n);
 void op_push(stack_t **h, unsigned int line_n);
 void op_pint(stack_t **h, unsigned int line_n);
