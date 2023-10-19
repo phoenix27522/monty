@@ -58,10 +58,15 @@ stack_t *add_dnodeint_end(stack_t **head, const int n);
 void execute(FILE *fopcode, instruction_t *op);
 
 /*-------------------- op_function.c --------------------*/
+
 void op_pall(stack_t **h, unsigned int line_n);
 void op_push(stack_t **h, unsigned int line_n);
 void op_pint(stack_t **h, unsigned int line_n);
 void op_pop(stack_t **h, unsigned int line_n);
 void op_swap(stack_t **h, unsigned int line_n);
+
+/*-------------------- op_function2.c -------------------*/
+void op_add(stack_t **h, unsigned int line_n);
+
 
 #endif /* MONTY_H */
