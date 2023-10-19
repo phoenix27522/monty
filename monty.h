@@ -76,5 +76,7 @@ void op_mul(stack_t **h, unsigned int line_n);
 /*--------------------- op_function3.c --------------------*/
 
 void op_mod(stack_t **h, unsigned int line_n);
+void op_pchar(stack_t **h, unsigned int line_n);
+
 
 #endif /* MONTY_H */
